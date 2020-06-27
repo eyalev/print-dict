@@ -43,31 +43,36 @@ def test_print_dict_format():
         'three': 'three-value',
         'four': CustomClass(),
         'five': custom_method,
+        'six': CustomClass2(),
     }
 
-    expected = """\
-{
-    'one': 'one-value',
-    'two': 'two-value',
-    'three': 'three-value',
-    'four': <tests.test_print_dict.CustomClass object at 0x7f5c335cd6d8>,
-    'five': <function custom_method at 0x7f5c33231840>
-}\
-"""
+    # Expected
+    """
+    {
+        'one': 'one-value',
+        'two': 'two-value',
+        'three': 'three-value',
+        'four': <tests.test_print_dict.CustomClass object at 0x7f5c335cd6d8>,
+        'five': <function custom_method at 0x7f5c33231840>,
+        'six': CustomClass2 ' ` " some_sting
+    }
+    """
 
     result = format_dict(dict_3)
 
-    print(result)
-
-    # assert result == expected
-    lines = expected.split('\n')
-    # import pdb; pdb.set_trace()
+    lines = result.split('\n')
     assert '<tests.test_print_dict.CustomClass object at 0x' in lines[4]
     assert '<function custom_method at 0x' in lines[5]
+    assert """CustomClass2 ' ` " some_sting""" in lines[6]
 
 
 class CustomClass:
     pass
+
+
+class CustomClass2:
+    def __repr__(self):
+        return """CustomClass2 ' ` " some_sting"""
 
 
 def custom_method():
