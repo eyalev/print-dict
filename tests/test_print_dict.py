@@ -1,7 +1,24 @@
 from print_dict.print_dict import format_dict
 
 
-def test_print_dict_format():
+def test_print_dict_format_1():
+
+    dict_1 = {
+        'one': 'long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long'
+    }
+
+    result = format_dict(dict_1)
+
+    expected = """\
+{
+    'one': 'long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long-long'
+}\
+"""
+
+    assert result == expected
+
+
+def test_print_dict_format_2():
 
     dict_1 = {
         'one': 'one-value'
@@ -9,7 +26,13 @@ def test_print_dict_format():
 
     result = format_dict(dict_1)
 
-    assert result == "{'one': 'one-value'}"
+    expected = """\
+{
+    'one': 'one-value'
+}\
+"""
+
+    assert result == expected
 
     # --------------------
 

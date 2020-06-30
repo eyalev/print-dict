@@ -25,6 +25,10 @@ def format_dict(arg):
     style_file_text = """\
 [style]
 COLUMN_LIMIT: 96
+EACH_DICT_ENTRY_ON_SEPARATE_LINE: true
+FORCE_MULTILINE_DICT: true
+INDENT_DICTIONARY_VALUE: false
+ALLOW_SPLIT_BEFORE_DICT_VALUE: false
 """
 
     temp_style_file_path = f'/tmp/{UNIQUE_TOKEN}-style'
