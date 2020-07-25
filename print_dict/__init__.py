@@ -1,4 +1,4 @@
 
-from .print_dict import print_dict
+from .print_dict import print_dict, pd
 
-__all__ = ['print_dict']
+__all__ = ['print_dict', 'pd']

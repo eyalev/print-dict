@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "print-dict"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 authors = ["Eyal Levin <eyalev@gmail.com>"]
 readme = "README.md"
@@ -11,7 +11,6 @@ print-dict = "print_dict.cli:cli"
 [tool.poetry.dependencies]
 python = "^3.6"
 yapf = "^0.30.0"
-click = "^7.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

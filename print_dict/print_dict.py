@@ -11,6 +11,10 @@ def print_dict(arg):
     print(format_dict(arg))
 
 
+def pd(arg):
+    print_dict(arg)
+
+
 def format_dict(arg):
 
     pretty_printer = PrettyPrinter(
@@ -19,8 +23,6 @@ def format_dict(arg):
     )
 
     formatted_dict_step_1 = pretty_printer.pformat(arg)
-
-    # formatted_dict_step_2 = re.sub('(<.* 0x.*>)', "'\\1'", formatted_dict_step_1)
 
     style_file_text = """\
 [style]
@@ -36,8 +38,6 @@ ALLOW_SPLIT_BEFORE_DICT_VALUE: false
 
     formatted_dict_step_3, _ = FormatCode(formatted_dict_step_1, style_config=temp_style_file_path)
     formatted_dict_step_4 = formatted_dict_step_3.strip()
-
-    # formatted_dict = re.sub("'(<.*0x.*>)'", "\\1", formatted_dict_step_4)
 
     formatted_dict_step_5 = re.sub(f"'{UNIQUE_TOKEN}(.*)'", "\\1", formatted_dict_step_4)
     formatted_dict = formatted_dict_step_5.replace("\\'", "'")
