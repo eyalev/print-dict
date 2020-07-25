@@ -1,6 +1,7 @@
 
 import re
-from pathlib import Path
+import os
+import tempfile
 
 from .config import UNIQUE_TOKEN
 from .pprint_python_3_9 import PrettyPrinter
@@ -33,10 +34,15 @@ INDENT_DICTIONARY_VALUE: false
 ALLOW_SPLIT_BEFORE_DICT_VALUE: false
 """
 
-    temp_style_file_path = f'/tmp/{UNIQUE_TOKEN}-style'
-    Path(temp_style_file_path).write_text(style_file_text)
+    temp_file = tempfile.NamedTemporaryFile(delete=False)
+    try:
+        temp_file.write(style_file_text.encode("utf-8"))
+        temp_file.seek(0)
+        formatted_dict_step_3, _ = FormatCode(formatted_dict_step_1, style_config=temp_file.name)
+    finally:
+        os.unlink(temp_file.name)
+        temp_file.close()
 
-    formatted_dict_step_3, _ = FormatCode(formatted_dict_step_1, style_config=temp_style_file_path)
     formatted_dict_step_4 = formatted_dict_step_3.strip()
 
     formatted_dict_step_5 = re.sub(f"'{UNIQUE_TOKEN}(.*)'", "\\1", formatted_dict_step_4)
