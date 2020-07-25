@@ -1,6 +1,12 @@
 
 # print-dict
 
+## Install
+
+```
+$ pip install print-dict
+```
+
 ## Example 1
 
 Code:
