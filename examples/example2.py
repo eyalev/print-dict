@@ -1,4 +1,4 @@
-from print_dict import print_dict
+from print_dict import pd
 
 
 class Object1:
@@ -37,5 +37,4 @@ data = {
 
 }
 
-print_dict(data)
-
+pd(data)
