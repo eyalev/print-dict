@@ -39,7 +39,3 @@ data = {
 
 print_dict(data)
 
-# # Alias 'pd' also available
-# from print_dict import pd
-# pd(data)
-
