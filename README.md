@@ -7,20 +7,38 @@
 $ pip install print-dict
 ```
 
+## Usage
+
+```python
+from print_dict import pd
+pd({'key': 'value'})
+
+# Or
+
+from print_dict import print_dict
+print_dict({'key': 'value'})
+```
+
 ## Example 1
 
 Code:
 
 ```python
 from print_dict import pd
-dict1 = {'key': 'value'} 
+
+dict1 = {
+    'key': 'value'
+} 
+
 pd(dict1)
 ```
 
 Output:
 
 ```
-{'key', 'value'}
+{
+    'key': 'value'
+}
 ```
 
 ## Example 2
@@ -28,7 +46,7 @@ Output:
 Code:
 
 ```python
-from print_dict import print_dict
+from print_dict import pd
 
 
 class Object1:
@@ -67,12 +85,7 @@ data = {
 
 }
 
-print_dict(data)
-
-# # Alias 'pd' also available
-# from print_dict import pd
-# pd(data)
-
+pd(data)
 
 ```
 
