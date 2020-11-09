@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "print-dict"
-version = "0.1.12"
+version = "0.1.13"
 description = ""
 authors = ["Eyal Levin <eyalev@gmail.com>"]
 readme = "README.md"

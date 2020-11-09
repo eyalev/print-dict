@@ -4,7 +4,7 @@
 ## Install
 
 ```
-$ pip install print-dict
+$ pip install -U print-dict
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ from print_dict import pd
 
 dict1 = {
     'key': 'value'
-} 
+}
 
 pd(dict1)
 ```
