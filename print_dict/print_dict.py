@@ -40,8 +40,8 @@ ALLOW_SPLIT_BEFORE_DICT_VALUE: false
         temp_file.seek(0)
         formatted_dict_step_3, _ = FormatCode(formatted_dict_step_1, style_config=temp_file.name)
     finally:
-        os.unlink(temp_file.name)
         temp_file.close()
+        os.unlink(temp_file.name)
 
     formatted_dict_step_4 = formatted_dict_step_3.strip()
 
