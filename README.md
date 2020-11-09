@@ -1,6 +1,15 @@
 
 # print-dict
 
+## Motivation
+
+Apparently, pretty-printing nested python dictionaries with values such as classes and functions (where you can't use `json.dumps`) is
+not as straightforward as you would think.
+
+See: https://stackoverflow.com/questions/3229419/how-to-pretty-print-nested-dictionaries
+
+This library tries to make it a little bit easier.
+
 ## Install
 
 ```
