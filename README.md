@@ -26,6 +26,12 @@ pd({'key': 'value'})
 
 from print_dict import print_dict
 print_dict({'key': 'value'})
+
+
+# Get the string without printing
+from print_dict import format_dict
+string = format_dict({'key': 'value'})
+
 ```
 
 ## Example 1
