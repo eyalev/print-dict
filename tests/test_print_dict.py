@@ -77,7 +77,7 @@ def test_print_dict_format_2():
         'three': 'three-value',
         'four': <tests.test_print_dict.CustomClass object at 0x7f5c335cd6d8>,
         'five': <function custom_method at 0x7f5c33231840>,
-        'six': CustomClass2 ' ` " some_sting
+        'six': CustomClass2 ` " some_sting
     }
     """
 
@@ -86,7 +86,7 @@ def test_print_dict_format_2():
     lines = result.split('\n')
     assert '<tests.test_print_dict.CustomClass object at 0x' in lines[4]
     assert '<function custom_method at 0x' in lines[5]
-    assert """CustomClass2 ' ` " some_sting""" in lines[6]
+    assert """CustomClass2 ` " some_sting""" in lines[6]
 
 
 class CustomClass:
@@ -95,7 +95,7 @@ class CustomClass:
 
 class CustomClass2:
     def __repr__(self):
-        return """CustomClass2 ' ` " some_sting"""
+        return """CustomClass2 ` " some_sting"""
 
 
 def custom_method():
