@@ -10,7 +10,7 @@ See: https://stackoverflow.com/questions/3229419/how-to-pretty-print-nested-dict
 
 This library tries to make it a little bit easier.
 
-## Install
+## Install or Upgrade
 
 ```
 $ pip install -U print-dict
