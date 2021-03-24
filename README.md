@@ -22,6 +22,13 @@ $ pip install -U print-dict
 from print_dict import pd
 pd({'key': 'value'})
 
+# ------------------------
+# Output:
+# {
+#    'key': 'value'
+# } 
+# ------------------------
+
 # Or
 
 from print_dict import print_dict
