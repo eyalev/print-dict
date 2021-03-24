@@ -1,3 +1,5 @@
+import numpy as np
+
 from print_dict.print_dict import format_dict
 
 
@@ -87,6 +89,23 @@ def test_print_dict_format_2():
     assert '<tests.test_print_dict.CustomClass object at 0x' in lines[4]
     assert '<function custom_method at 0x' in lines[5]
     assert """CustomClass2 ` " some_sting""" in lines[6]
+
+
+def test_key_and_value_are_objects():
+
+    dict_1 = {
+        np.int32(0): np.int32(1)
+    }
+
+    result = format_dict(dict_1)
+
+    expected = """\
+{
+    0: 1
+}\
+"""
+
+    assert result == expected
 
 
 class CustomClass:
