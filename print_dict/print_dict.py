@@ -45,7 +45,7 @@ ALLOW_SPLIT_BEFORE_DICT_VALUE: false
 
     formatted_dict_step_4 = formatted_dict_step_3.strip()
 
-    formatted_dict_step_5 = re.sub(f"'{UNIQUE_TOKEN}(.*)'", "\\1", formatted_dict_step_4)
+    formatted_dict_step_5 = re.sub(f"'{UNIQUE_TOKEN}(.*?)'", "\\1", formatted_dict_step_4)
     formatted_dict = formatted_dict_step_5.replace("\\'", "'")
 
     return formatted_dict
