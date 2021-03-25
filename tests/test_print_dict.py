@@ -108,6 +108,33 @@ def test_key_and_value_are_objects():
     assert result == expected
 
 
+def test_sorting():
+
+    dict_1 = {
+        'ggg': 'ggg-value',
+        'bbb': 'bbb-value',
+        'aaa': {
+            'eee': 'eee-value',
+            'ddd': 'ddd-value',
+        },
+    }
+
+    result = format_dict(dict_1, sort_keys=True)
+
+    expected = """\
+{
+    'aaa': {
+        'ddd': 'ddd-value',
+        'eee': 'eee-value'
+    },
+    'bbb': 'bbb-value',
+    'ggg': 'ggg-value'
+}\
+"""
+
+    assert result == expected
+
+
 class CustomClass:
     pass
 

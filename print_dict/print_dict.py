@@ -8,19 +8,19 @@ from .pprint_python_3_9 import PrettyPrinter
 from yapf.yapflib.yapf_api import FormatCode
 
 
-def print_dict(arg):
-    print(format_dict(arg))
+def print_dict(arg, sort_keys=False):
+    print(format_dict(arg, sort_keys=sort_keys))
 
 
-def pd(arg):
-    print_dict(arg)
+def pd(arg, sort_keys=False):
+    print_dict(arg, sort_keys=sort_keys)
 
 
-def format_dict(arg):
+def format_dict(arg, sort_keys=False):
 
     pretty_printer = PrettyPrinter(
         indent=1, width=200, depth=None,
-        compact=False, sort_dicts=False
+        compact=False, sort_dicts=sort_keys
     )
 
     formatted_dict_step_1 = pretty_printer.pformat(arg)
